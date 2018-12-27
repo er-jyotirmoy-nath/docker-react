@@ -1,0 +1,21 @@
+// For Developement
+docker build -f Dockerfile.dev .
+
+docker run -p 3000:3000 -v /app/node_modules -v $(pwd):/app  DOCKERID
+
+docker run -it DOCEKR_ID npm run test
+// with docer compose
+
+docker-compose up
+
+docker-compose up --build
+// WIthout test container
+docker exec -it DOCKERID npm run test
+
+// or with test container
+docker exec -it DOCKERID sh
+
+// To build
+docker build .
+
+docker run -p 8080:80 DOCKERID
